@@ -1,0 +1,24 @@
+.main-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* main content grows to fill space */
+.main-content {
+  flex: 1;
+}
+
+/* footer styles (no position: fixed!) */
+app-footer {
+  width: 100%;
+}
+
+/* if you use a class in footer */
+.site-footer {
+  background-color: #0b1120;
+  color: #e5e7eb;
+  padding: 1.5rem 2rem;
+  border-top: 1px solid #1f2937;
+  font-size: 0.9rem;
+}

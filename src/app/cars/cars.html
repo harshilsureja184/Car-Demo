@@ -1,0 +1,19 @@
+<section class="cars-hero">
+    <div class="hero-text">
+        <h1>Explore Cars by Fuel Type</h1>
+        <p>
+            Quickly switch between Petrol, Diesel, and CNG to understand which type
+            matches your usage, budget, and driving style.
+        </p>
+        <div class="hero-image">
+            <img [src]="imgUrl" alt="Cars illustration"/>
+        </div>
+    </div>
+</section>
+<div class="fuel-menu3">
+    <a class="fuel-link" routerLink="petrol">Petrol</a>
+    <a class="fuel-link" routerLink="diesel">Diesel</a>
+    <a class="fuel-link" routerLink="cng">CNG</a>
+</div>
+
+<router-outlet></router-outlet>

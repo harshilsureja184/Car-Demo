@@ -1,0 +1,47 @@
+<!-- CONTACT HERO -->
+<section class="contact-hero">
+  <div class="contact-hero-overlay"></div>
+  <div class="contact-hero-content">
+    <h1>Contact Us</h1>
+    <p>We’d love to hear from you. Reach out for reservations, feedback, or queries.</p>
+  </div>
+</section>
+
+<!-- CONTACT DETAILS -->
+<section class="contact-details">
+  <div class="contact-grid">
+    <div class="contact-card">
+      <h3>📍 Address</h3>
+      <p>Valsad, Gujarat, India</p>
+    </div>
+
+    <div class="contact-card">
+      <h3>📞 Phone</h3>
+      <p>+91 7284050706</p>
+    </div>
+
+    <div class="contact-card">
+      <h3>✉️ Email</h3>
+      <p>info@harshilskitchen.com</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT FORM -->
+<section class="contact-form-section">
+  <div class="form-box">
+    <h2>Send Us Feedback </h2>
+    <p style="color:honeydew">{{name ()}}</p>
+    <form>
+  <input type="text" placeholder="Your Name" [(ngModel)]="name" [ngModelOptions]="{standalone: true}" required>
+      <input type="email" placeholder="Your Email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" required>
+      <input type="text" placeholder="Subject" required>
+      <textarea placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit" class="btn gold">Send Message</button>
+
+      <p style="color:rgb(0, 0, 0)">Name : {{name()}}</p>
+
+      <p style="color:rgb(0, 0, 0)">{{email}}</p> 
+    </form>
+  </div>
+</section>
