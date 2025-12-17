@@ -8,6 +8,30 @@ import {Router, RouterLink } from '@angular/router';
   styleUrl: './home.css',
 })
 export class Home {
+  image = [
+    '/img/about-img.webp',
+    '/img/cars-img.webp'
+  ];
+
+  index = 0;
+
+   get currentImage() {
+    return this.image[this.index];
+  }
+
+  next() {
+    this.index++;
+    if (this.index >= this.image.length) {
+      this.index = 0;
+    }
+  }
+
+  prev() {
+    this.index--;
+    if (this.index < 0) {
+      this.index = this.image.length - 1;
+    }
+  }
   constructor (private router : Router){}
   gotoMenu()
   {

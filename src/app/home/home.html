@@ -21,13 +21,10 @@
     </div>
 
     <div class="hero-image">
-      <div class="hero-card">
-        <h3>Why CarZone?</h3>
-        <ul>
-          <li>Curated cars from trusted dealers and owners.</li>
-          <li>Detailed history, photos, and inspection reports.</li>
-          <li>Smart filters to match your lifestyle and budget.</li>
-        </ul>
+  <div class="hero-slider" [style.backgroundImage]="'url(' + currentImage + ')'">
+
+        <button class="nav prev" (click)="prev()">&#8592;</button>
+        <button class="nav next" (click)="next()">&#8594;</button>
       </div>
     </div>
   </section>

@@ -31,17 +31,47 @@
 <section class="contact-form-section">
   <div class="form-box">
     <h2>Send Us Feedback </h2>
-    <p style="color:honeydew">{{name ()}}</p>
     <form>
-  <input type="text" placeholder="Your Name" [(ngModel)]="name" [ngModelOptions]="{standalone: true}" required>
-      <input type="email" placeholder="Your Email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" required>
-      <input type="text" placeholder="Subject" required>
-      <textarea placeholder="Your Message" rows="5" required></textarea>
-      <button type="submit" class="btn gold">Send Message</button>
-
-      <p style="color:rgb(0, 0, 0)">Name : {{name()}}</p>
-
-      <p style="color:rgb(0, 0, 0)">{{email}}</p> 
+      <input type="text" placeholder="Your Name" [(ngModel)]="name" name="name" required>
+      <input type="email" placeholder="Your Email" [(ngModel)]="email" name="email" required>
+      <input type="text" placeholder="Subject" [(ngModel)]="subject" name="subject" required>
+      <textarea placeholder="Your Message" [(ngModel)]="message" name="message" rows="5" required></textarea>
+      <button type="submit" class="btn gold" (click)="add()">Send Message</button>
     </form>
+
+    @if (error)
+    {
+      <p style="color: red; font-size: 20px; text-align: center; margin-top: 10px;">{{ error }}</p>
+    }
+    <hr>
+
+    <table border="1">
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Subject</th>
+      <th>Message</th>
+      <th>Action</th>
+    </tr>
+
+    @for (detail of details; track $index) {
+      <tr>
+        <td>{{ detail.name }}</td>
+        <td>{{ detail.email }}</td>
+        <td>{{ detail.subject }}</td>
+        <td>{{ detail.message }}</td>
+        <td>
+          <button (click)="delete($index)" style="margin-right:20px; border-radius: 5px;">Remove</button>
+          <button (click)="edit(detail)" style="border-radius: 5px;">Edit</button>
+        </td>
+      </tr>
+    }
+
+  @if (details.length === 0) {
+    <tr>
+      <td colspan="5" style="text-align: center;">No Data Found</td>
+    </tr>
+  }
+  </table>
   </div>
 </section>
